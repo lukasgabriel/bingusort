@@ -1,4 +1,4 @@
-# bingusort
+# 🐈‍⬛ bingusort 🐈‍⬛
 An incredibly inefficient sorting algorithm, badly implemented in Rust.
 
 My goal was to create the worst (in terms of execution time) possible algorithm that
