@@ -7,9 +7,7 @@ use std::thread::sleep;
 use std::time::Duration;
 use std::time::Instant;
 
-
 const BINGUS_MILLIS: u64 = 2500;
-
 
 fn main() {
     let matches = App::new("BINGUS Sort")
@@ -35,12 +33,12 @@ fn main() {
                 .short('s')
                 .help("Activates slow mode, which inserts pauses between verbose outputs of specified length (in ms). Does nothing when used without -v / --verbose")
                 .takes_value(true),
-        )   
+        )
         .arg(
             Arg::with_name("bingus")
                 .short('b')
                 .help("Activates BINGUS mode. Just see for yourself.")
-        )   
+        )
         .get_matches();
 
     let verbose = matches.is_present("verbose");
@@ -48,11 +46,7 @@ fn main() {
 
     let mut slow_secs: u64 = 0;
     if matches.is_present("slow") {
-        slow_secs = matches
-            .value_of("slow")
-            .unwrap()
-            .parse::<u64>()
-            .unwrap();
+        slow_secs = matches.value_of("slow").unwrap().parse::<u64>().unwrap();
     }
 
     let mut length = 10;
@@ -129,7 +123,10 @@ fn bounce(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
         println!("  {:?}", list);
     }
     if bingus {
-        println!("  Bingus picks two random elements ({} and {}) and BOUNCES them on each other.", i, j);
+        println!(
+            "  Bingus picks two random elements ({} and {}) and BOUNCES them on each other.",
+            i, j
+        );
         println!("  {:?}", list);
         sleep(Duration::from_millis(BINGUS_MILLIS));
     }
@@ -138,7 +135,7 @@ fn bounce(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
 fn inspect_and_nudge(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
     let mut max_index = 0;
     let mut max_value = list[0];
-    
+
     for i in 1..list.len() {
         if list[i] > max_value {
             max_index = i;
@@ -147,10 +144,16 @@ fn inspect_and_nudge(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
     }
 
     if verbose {
-        println!("  Inspect: largest value is {} at index {}", max_value, max_index);
+        println!(
+            "  Inspect: largest value is {} at index {}",
+            max_value, max_index
+        );
     }
     if bingus {
-        println!("  Bingus INSPECTS the list and finds the largest element {} at position {}.", max_value, max_index);
+        println!(
+            "  Bingus INSPECTS the list and finds the largest element {} at position {}.",
+            max_value, max_index
+        );
     }
 
     while max_index < list.len() - 1 {
@@ -172,7 +175,7 @@ fn inspect_and_nudge(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
 fn glimpse_and_upgrade(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
     let mut min_index = 0;
     let mut min_value = list[0];
-    
+
     for i in 1..list.len() {
         if list[i] < min_value {
             min_index = i;
@@ -181,7 +184,10 @@ fn glimpse_and_upgrade(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
     }
 
     if verbose {
-        println!("  Glimpse: smallest value is {} at index {}", min_value, min_index);
+        println!(
+            "  Glimpse: smallest value is {} at index {}",
+            min_value, min_index
+        );
         println!("  {:?}", list);
     }
     if bingus {
@@ -208,7 +214,10 @@ fn glimpse_and_upgrade(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
 
 fn shuffle(list: &mut Vec<i32>, verbose: bool, bingus: bool) {
     let bingus_positions = [2, 9, 14, 7, 21, 19]
-        .iter().map(|&x| x % list.len()).filter(|&x| x != 0).collect::<Vec<usize>>();
+        .iter()
+        .map(|&x| x % list.len())
+        .filter(|&x| x != 0)
+        .collect::<Vec<usize>>();
 
     if verbose {
         println!("  Shuffle: the BINGUS positions are {:?}", bingus_positions);
