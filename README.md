@@ -7,6 +7,23 @@ My goal was to create the worst possible algorithm that
 - while making its implementation as fast as possible.
 
 
+## Usage
+```
+BINGUS Sort 
+
+USAGE:
+    bingusort [OPTIONS]
+
+OPTIONS:
+    -a <array>         Input list to be sorted
+    -b                 Activates BINGUS mode. Just see for yourself.
+    -h, --help         Print help information
+    -l <length>        Specifies length of the list
+    -s <slow>          Activates slow mode, which inserts pauses between verbose outputs of
+                       specified length (in ms). Does nothing when used without -v / --verbose
+    -v                 Activates verbose mode
+```
+
 ## Here's what it does
 
 1. **B**ounce: Randomly select and swap elements.
