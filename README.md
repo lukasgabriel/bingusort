@@ -1,5 +1,4 @@
 # 🐈‍⬛ bingusort 🐈‍⬛
----
 [![Bingus](https://img.shields.io/badge/BINGUSORT-8A2BE2)](https://github.com/lukasgabriel/bingusort) [![Build](https://github.com/lukasgabriel/bingusort/actions/workflows/rust.yml/badge.svg)](https://github.com/lukasgabriel/bingusort/actions/runs/) [![Version](https://img.shields.io/github/v/tag/lukasgabriel/bingusort)](https://github.com/lukasgabriel/bingusort/releases)
 ---
 An incredibly inefficient sorting algorithm, badly implemented in Rust.
