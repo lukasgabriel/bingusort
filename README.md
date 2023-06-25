@@ -6,6 +6,8 @@ My goal was to create the worst possible algorithm that
 - would still *eventually* sort the list,
 - while making its implementation as fast as possible.
 
+[Engage Bingus mode](https://knowyourmeme.com/memes/bingus) with `-b` to make execution so slow that you can watch the program work in real time! 😎
+
 
 ## Usage
 ```
