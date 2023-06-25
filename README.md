@@ -1,5 +1,6 @@
 # bingusort
 An incredibly inefficient sorting algorithm, badly implemented in Rust.
+
 My goal was to create the worst possible algorithm that would still *eventually* sort the list, while making its implementation as fast as possible.
 
 ## Here's what it does
